@@ -6,8 +6,8 @@
     src="https://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
-  <script src="js/base.js"></script>
-  <link href="style/base.css" rel="stylesheet" type="text/css" />
+  <script src="js/base.js?rnd=394"></script>
+  <link href="style/base.css?rnd=1" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -21,98 +21,116 @@
         <table id="lineup-input-tbl">
           <tbody>
             <tr>
+              <th colspan="3" style="background-color: #ccc;">Roster and Stats</th>
+            </tr>
+            <tr>
               <th width="80px"></th>
               <th>Player Name</th>
               <th width="80px">OBA</th>
             </tr>
             <tr>
-              <td>Player 1: </td>
-              <td><input class="player-name" type="text" name="Player0" value="Lou" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"></td>
-              <td><input class="player-oba" type="text" name="OBA0" value=" 0.400"></td>
+              <td>Batter 1: </td>
+              <td><input class="player-name" type="text" name="Player0" value="Kirk" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;"></td>
+              <td><input class="player-oba" type="text" name="OBA0" value=" 0.351"></td>
             </tr>
             <tr>
-              <td>Player 2: </td>
-              <td><input class="player-name" type="text" name="Player1" value="Alan"></td>
-              <td><input class="player-oba" type="text" name="OBA1" value=" 0.450"></td>
+              <td>Batter 2: </td>
+              <td><input class="player-name" type="text" name="Player1" value="Miggy"></td>
+              <td><input class="player-oba" type="text" name="OBA1" value=" 0.395"></td>
               </td>
             </tr>
             <tr>
-              <td>Player 3:</td>
-              <td><input class="player-name" type="text" name="Player2" value="Kirk"></td>
-              <td><input class="player-oba" type="text" name="OBA2" value=" 0.250"></td>
+              <td>Batter 3:</td>
+              <td><input class="player-name" type="text" name="Player2" value="Lou"></td>
+              <td><input class="player-oba" type="text" name="OBA2" value=" 0.363"></td>
             </tr>
             <tr>
-              <td>Player 4:</td>
-              <td><input class="player-name" type="text" name="Player3" value="Miggy"></td>
-              <td><input class="player-oba" type="text" name="OBA3" value=" 0.390"></td>
+              <td>Batter 4:</td>
+              <td><input class="player-name" type="text" name="Player3" value="JD"></td>
+              <td><input class="player-oba" type="text" name="OBA3" value=" 0.353"></td>
             </tr>
             <tr>
-              <td>Player 5: </td>
-              <td><input class="player-name" type="text" name="Player4" value="Ty"></td>
-              <td><input class="player-oba" type="text" name="OBA4" value=" 0.400"></td>
+              <td>Batter 5: </td>
+              <td><input class="player-name" type="text" name="Player4" value="Alan"></td>
+              <td><input class="player-oba" type="text" name="OBA4" value=" 0.352"></td>
             </tr>
             <tr>
-              <td>Player 6:</td>
-              <td><input class="player-name" type="text" name="Player5" value="Nick"></td>
-              <td><input class="player-oba" type="text" name="OBA5" value=" 0.400"></td>
+              <td>Batter 6:</td>
+              <td><input class="player-name" type="text" name="Player5" value="Ty"></td>
+              <td><input class="player-oba" type="text" name="OBA5" value=" 0.433"></td>
             </tr>
             <tr>
-              <td>Player 7: </td>
-              <td><input class="player-name" type="text" name="Player6" value="Jack"></td>
-              <td><input class="player-oba" type="text" name="OBA6" value=" 0.250"></td>
+              <td>Batter 7: </td>
+              <td><input class="player-name" type="text" name="Player6" value="Pudge"></td>
+              <td><input class="player-oba" type="text" name="OBA6" value=" 0.334"></td>
             </tr>
             <tr>
-              <td>Player 8: </td>
-              <td><input class="player-name" type="text" name="Player7" value="Lance"></td>
-              <td><input class="player-oba" type="text" name="OBA7" value=" 0.310"></td>
+              <td>Batter 8: </td>
+              <td><input class="player-name" type="text" name="Player7" value="Nick"></td>
+              <td><input class="player-oba" type="text" name="OBA7" value=" 0.323"></td>
             </tr>
             <tr>
-              <td>Player 9: </td>
-              <td><input class="player-name" type="text" name="Player8" value="JD"></td>
-              <td><input class="player-oba" type="text" name="OBA8" value=" 0.410"></td>
+              <td>Batter 9: </td>
+              <td><input class="player-name" type="text" name="Player8" value="Lance"></td>
+              <td><input class="player-oba" type="text" name="OBA8" value=" 0.313"></td>
             </tr>
           </tbody>
         </table>
-        <input id="lineup-submit-btn" type="submit" value="Optimize >>">
+        <div style='margin-top:30px;float: left;'>
+          Number of Simulations: <input type='text' name='num_sims' value='1000' id='num_sims' style='width: 70px;'><br/>
+          Number of Lineup Combinations to Try: <input type='text' name='num_combos' value='30' id='num_combos' style='width: 70px;'>
+          <div id='display_sims_run'>Simulations Run: <div id='display_sim_count' style='display: inline-block;font-weight: bold;'>0</div></div>
+          <input id="lineup-submit-btn" type="submit" value="Optimize >>"><br/><br/>
+            <div style='font-size:.7em;margin-top:10px;'>Note: 1000 simulations and 30 combinations should take a newer computer 3 seconds. If running on an older phone it could take 30 seconds.</div>
+        </div>
+
       </form>
     </div>
     <div id="col2">
       <table id="lineup-results-tbl">
+        <tr>
+          <th colspan="3" style="background-color: #ccc;">Best Lineup</th>
+        </tr>
         <tr>
           <th width="80px"></th>
           <th>Player Name</th>
           <th width="80px">OBA</th>
         </tr>
         <tr>
-          <td>Player 1: </td><td>Lou</td><td>0.400</td>
+          <td>Batter 1: </td><td id='res_player0'></td><td id='res_OBA0'></td>
         </tr>
         <tr>
-          <td>Player 2: </td><td>Alan</td><td>0.450</td>
+          <td>Batter 2: </td><td id='res_player1'></td><td id='res_OBA1'></td>
         </tr>
         <tr>
-          <td>Player 3: </td><td>Alan</td><td>0.450</td>
+          <td>Batter 3: </td><td id='res_player2'></td><td id='res_OBA2'></td>
         </tr>
         <tr>
-          <td>Player 4: </td><td>Alan</td><td>0.450</td>
+          <td>Batter 4: </td><td id='res_player3'></td><td id='res_OBA3'></td>
         </tr>
         <tr>
-          <td>Player 5: </td><td>Alan</td><td>0.450</td>
+          <td>Batter 5: </td><td id='res_player4'></td><td id='res_OBA4'></td>
         </tr>
         <tr>
-          <td>Player 6: </td><td>Alan</td><td>0.450</td>
+          <td>Batter 6: </td><td id='res_player5'></td><td id='res_OBA5'></td>
         </tr>
         <tr>
-          <td>Player 7: </td><td>Alan</td><td>0.450</td>
+          <td>Batter 7: </td><td id='res_player6'></td><td id='res_OBA6'></td>
         </tr>
         <tr>
-          <td>Player 8: </td><td>Alan</td><td>0.450</td>
+          <td>Batter 8: </td><td id='res_player7'></td><td id='res_OBA7'></td>
         </tr>
         <tr>
-          <td>Player 9: </td><td>Alan</td><td>0.450</td>
+          <td>Batter 9: </td><td id='res_player8'></td><td id='res_OBA8'></td>
+        </tr>
+        <tr>
+          <td style='background-color: #ccc;'>Runs Scored: </td><td colspan='2' style='background-color: #ccc;' id='display_runs_scored'>0</td></td>
         </tr>
       </table>
     </div>
+
   </div>
+
 </body>
 
 </html>
